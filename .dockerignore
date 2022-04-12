@@ -1,0 +1,9 @@
+# Ignore all hidden files
+**/.*
+
+Dockerfile
+*.egg-info
+*.md
+setup.py
+requirements.txt
+__pycache__/
