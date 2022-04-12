@@ -11,6 +11,18 @@ Create/activate a virtual environment, then:
 $ pip install -e .
 ```
 
+An obsolete way of installing is:
+
+```bash
+$ python setup.py install
+```
+
+And an obsolete way of install dependencies is:
+
+```bash
+$ pip install -r requirements.txt
+```
+
 # Running the Service
 
 ```bash
@@ -43,6 +55,38 @@ The handlers themselves live in `src/gram/handlers` and do a number of things:
 - `/status` (`StatusHandler`): a TODO handler for querying service metrics.
 - `/health` (`HealthHandler`): a TODO handler for returning service health.
 
+# Docker
+
+A Dockerfile is provided for containerizing the service. To build it:
+
+```
+$ docker build -t deepgram/devops-onsite:latest .
+```
+
+And to run it:
+
+```
+$ docker run --rm -p 8080:8080 deepgram/devops-onsite:latest
+```
+
 # Tests
 
 This is set up for testing using `pytest`.
+
+First, install `pytest`:
+
+```bash
+$ pip install pytest
+```
+
+Then you can do:
+
+```bash
+$ pytest
+```
+
+or
+
+```bash
+$ python -m pytest
+```
